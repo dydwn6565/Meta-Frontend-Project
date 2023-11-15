@@ -13,6 +13,7 @@ function App() {
       <Nav/>
       <Main/>
       <Menu />
+      <Footer/>
       {/* <Header/>
       <BookingForm /> */}
     </div>
