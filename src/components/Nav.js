@@ -7,16 +7,16 @@ function Nav() {
     }
   return (
     <div>
-      <nav className={`navbar ${menuOpen ? "open" :""}`}>
-        <a href="/" className='logo'>
+      <nav className={`navbar ${menuOpen ? "open" : ""}`}>
+        <a href="/" className="logo">
           <img src={logo} alt="logo" />
         </a>
-        <div className='menu-icon' onClick={toggleMenu}>
+        <div className="menu-icon" onClick={toggleMenu}>
           <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
-        <ul className={`nav-links ${menuOpen ? 'visible':""}`}>
+        <ul className={`nav-links ${menuOpen ? "visible" : ""}`}>
           <li>
             <a href="/">Home</a>
           </li>
@@ -40,7 +40,6 @@ function Nav() {
             <a href="/">Login</a>
           </li>
         </ul>
-
       </nav>
     </div>
   );

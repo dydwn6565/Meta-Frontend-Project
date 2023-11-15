@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function BookingForm() {
+function BookingForm(props) {
   const [date, setDate] = useState("");
   const [times, setTimes] = useState("");
   const [guests, setGuest] = useState("");
@@ -17,7 +17,7 @@ function BookingForm() {
   return (
     <header>
       <section>
-        <form>
+        <form onSubmit={handleSubmit}>
           <fieldset>
             <div>
               <label htmlFor="book-date">Choose Date</label>
@@ -37,24 +37,38 @@ function BookingForm() {
                 onChange={(e) => setTimes(e.target.value)}
               >
                 <option value="">Select a Time</option>
-                {props.avaliableTimes.avaliableTimes.map((avaliableTimes) => {
-                  return <option key={avaliableTimes}>{avaliableTimes}</option>;
+                {props.availableTimes.availableTimes.map((availableTimes) => {
+                  return <option key={availableTimes}>{availableTimes}</option>;
                 })}
               </select>
             </div>
             <div>
-                <label htmlFor="book-guests">Number of Guests:</label>
-                <input id="book-guests" min="1" value={guests} onChange={(e) => setGuests(e.target.value)} />
+              <label htmlFor="book-guests">Number of Guests:</label>
+              <input
+                id="book-guests"
+                min="1"
+                value={guests}
+                onChange={(e) => setGuest(e.target.value)}
+              />
             </div>
             <div>
-                <label htmlFor="book-occasion">Occasion:</label>
-                <select id="book-occasion" key={occasion} value={occasion} onChange={e =>setOccasion(e.target.value)}>
-                    <option>Birthday</option>
-                    <option>Anniversary</option>
-                </select>
+              <label htmlFor="book-occasion">Occasion:</label>
+              <select
+                id="book-occasion"
+                key={occasion}
+                value={occasion}
+                onChange={(e) => setOccasion(e.target.value)}
+              >
+                <option>Birthday</option>
+                <option>Anniversary</option>
+              </select>
             </div>
             <div className="btnReceive">
-                <input aria-label="On Click" type='submit' value={"Make your Reservation"}/>
+              <input
+                aria-label="On Click"
+                type="submit"
+                value={"Make your Reservation"}
+              />
             </div>
           </fieldset>
         </form>
